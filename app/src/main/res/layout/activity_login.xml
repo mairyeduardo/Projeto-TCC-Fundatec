@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/splash"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/texto_ola"
+        android:src="@drawable/ferramenta" />
+
+
+    <TextView
+        android:id="@+id/texto_ola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/app_texto_Ola"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@id/texto_bem_vindo"
+        app:layout_constraintTop_toBottomOf="@+id/splash"
+        app:layout_constraintBottom_toTopOf="@id/input_login_email"
+        />
+
+    <TextView
+        android:id="@+id/texto_bem_vindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="@string/app_texto_Bem_vindo_de_Volta"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@id/input_login_email"
+        app:layout_constraintTop_toBottomOf="@id/texto_ola"
+        />
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toStartOf="@id/input_login_senha"
+        app:layout_constraintTop_toTopOf="@id/input_login_email"
+        app:layout_constraintBottom_toBottomOf="@id/input_login_email"
+        android:src="@drawable/email"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_login_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColorHint="@color/corTextoInput"
+        app:boxBackgroundColor="@color/InputsFundo1"
+        app:boxStrokeColor="@color/inputsStroke"
+        >
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/app_campo_email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toStartOf="@id/input_login_senha"
+        app:layout_constraintTop_toTopOf="@id/input_login_senha"
+        app:layout_constraintBottom_toBottomOf="@id/input_login_senha"
+        android:src="@drawable/chaves"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_login_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/input_login_email"
+        app:layout_constraintTop_toBottomOf="@+id/input_login_email"
+        android:textColorHint="@color/corTextoInput"
+        app:boxBackgroundColor="@color/InputsFundo1"
+        app:boxStrokeColor="@color/inputsStroke"
+        >
+        <EditText
+            android:id="@+id/login_senha"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:hint="@string/app_campo_senha"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/esqueceu_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:text="@string/app_campo_esqueciSenha"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/input_login_senha"
+        app:layout_constraintEnd_toEndOf="@id/input_login_senha"
+         />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:text="@string/app_botao_login"
+        android:backgroundTint="@color/BotaoPrincipal"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_login_senha"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

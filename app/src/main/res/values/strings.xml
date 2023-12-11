@@ -10,7 +10,7 @@
     <string name="app_botao_login">Login</string>
 
 
-    <string name="app_mensagem_erroEmailLogin">Erro ao logar, insira um email válida</string>
+    <string name="app_mensagem_erroEmailLogin">Erro ao logar, insira um email válido</string>
     <string name="app_mensagem_erroPasswordLogin">Erro ao logar, insira uma senha válida</string>
     <string name="app_mensagem_sucessoLogin">Login realizado com sucesso!</string>
     <string name="app_mensagem_erroLogin">Erro ao logar, insira dados válidos</string>

@@ -15,15 +15,15 @@ class LoginViewModel : ViewModel() {
 
     fun validacaoPreenchimento(
         email: String,
-        password: String
+        senha: String
     ) {
-        if (email.isNullOrBlank() && password.isNullOrBlank()) {
+        if (email.isNullOrBlank() && senha.isNullOrBlank()) {
             viewState.value = LoginViewState.ShowEmailPasswordError
             return
         } else if (email.isNullOrBlank()) {
             viewState.value = LoginViewState.ShowEmailError
             return
-        } else if (password.isNullOrBlank()) {
+        } else if (senha.isNullOrBlank()) {
             viewState.value = LoginViewState.ShowPasswordError
             return
         } else if (email.contains("@") && email.contains(".com")) {

@@ -15,7 +15,7 @@ interface LoginService {
         @Body loginRequest: LoginRequest
     ): Response<LoginResponse>
 
-    @GET("api/v1/usuario/email-e-senha")
+    @GET("api/v1/usuario/email-e-senha/")
     suspend fun verificarUser(
         @Query("email") email: String,
         @Query("senha") senha: String

@@ -43,9 +43,6 @@ class LoginRepository {
                     email = email,
                     senha = senha,
                 )
-                response.body()?.tooUserEntity()?.let{ userEntity ->
-                    database.userDao().insertUser(userEntity)
-                }
                 response.isSuccessful
             } catch (ex: java.lang.Exception) {
                 Log.e("verificarUser", ex.message.toString())

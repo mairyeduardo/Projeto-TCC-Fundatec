@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="BotaoPrincipal">#407C55</color>
+    <color name="FundoPrincipal">#356B48</color>
+    <color name="FundoPrincipal2">#407C55</color>
     <color name="InputsFundo1">#FFFBFB</color>
     <color name="inputsStroke">#B4B4B4</color>
     <color name="corTextoInput">#646464</color>

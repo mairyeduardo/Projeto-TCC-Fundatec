@@ -11,7 +11,7 @@ import kotlinx.coroutines.withContext
 
 class LoginRepository {
     private val repository = RetrofitNetworkClient.createNetworkClient(
-        baseUrl = "http://localhost:8081/solocraft"
+        baseUrl = "http://10.0.4.22:8081/solocraft/"
     ).create(LoginService::class.java)
 
     private val database: FHDatabase by lazy {
@@ -43,9 +43,6 @@ class LoginRepository {
                     email = email,
                     senha = senha,
                 )
-                response.body()?.tooUserEntity()?.let{ userEntity ->
-                    database.userDao().insertUser(userEntity)
-                }
                 response.isSuccessful
             } catch (ex: java.lang.Exception) {
                 Log.e("verificarUser", ex.message.toString())

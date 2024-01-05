@@ -6,6 +6,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface LoginService {
@@ -15,10 +16,10 @@ interface LoginService {
         @Body loginRequest: LoginRequest
     ): Response<LoginResponse>
 
-    @GET("api/v1/usuario/email-e-senha")
+    @GET("api/v1/usuario/email-e-senha/{email}/{senha}")
     suspend fun verificarUser(
-        @Query("email") email: String,
-        @Query("senha") senha: String
+        @Path("email") email: String,
+        @Path("senha") senha: String
     ): Response<LoginResponse>
 
 }

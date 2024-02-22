@@ -12,9 +12,10 @@
             android:id="@+id/lista_servicos_pendentes"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
             android:text="@string/app_componente_servico_pendente"
             android:textSize="32sp"
-            app:layout_constraintBottom_toTopOf="@id/lista_servicos_concluidos"
+            app:layout_constraintBottom_toTopOf="@id/cardview_pendentes"
             app:layout_constraintEnd_toStartOf="@id/iv_portaAberta"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,28 +30,33 @@
             app:layout_constraintStart_toEndOf="@id/lista_servicos_pendentes"
             app:layout_constraintTop_toTopOf="@id/lista_servicos_pendentes" />
 
-        <TextView
-            android:id="@+id/lista_servicos_concluidos"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/app_componente_servico_concluidos"
-            android:textSize="32sp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_pendentes"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="15dp"
+            app:cardBackgroundColor="@color/BotaoComecar"
+            app:layout_constraintStart_toStartOf="@id/lista_servicos_pendentes"
+            app:layout_constraintEnd_toEndOf="@id/iv_portaAberta"
+            app:layout_constraintTop_toBottomOf="@id/lista_servicos_pendentes"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lista_servicos_pendentes" />
+            >
 
-        <ImageView
-            android:id="@+id/iv_portaFechada"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/portafechada"
-            app:layout_constraintBottom_toBottomOf="@id/lista_servicos_concluidos"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/lista_servicos_concluidos"
-            app:layout_constraintTop_toTopOf="@id/lista_servicos_concluidos"
+            <TextView
+                android:id="@+id/titulo_servico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="nome servico exemplo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
-            />
+        </androidx.cardview.widget.CardView>
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

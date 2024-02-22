@@ -11,6 +11,7 @@
     <string name="app_botao_login">Login</string>
     <string name="app_botao_comecar">Começar</string>
     <string name="app_botao_entrar">Entrar</string>
+    <string name="app_botao_servico">Novo Serviço</string>
 
 
     <string name="app_mensagem_erroEmailLogin">Erro ao logar, insira um email válido</string>

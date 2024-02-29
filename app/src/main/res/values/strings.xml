@@ -13,6 +13,7 @@
 
     <string name="app_componente_servico_pendente">Serviços Pendentes</string>
     <string name="app_componente_servico_concluidos">Serviços Concluídos</string>
+    <string name="app_componente_seus_clientes">Seus Clientes</string>
 
     <string name="app_botao_login">Login</string>
     <string name="app_botao_comecar">Começar</string>

@@ -5,8 +5,10 @@
     <string name="app_texto_Ola">Olá</string>
     <string name="app_texto_Bem_vindo_de_Volta">Bem vindo de volta!</string>
     <string name="app_texto_Nome_projeto">Solo Craft</string>
+    <string name="app_texto_Seja_Bem_Vindo">Seja bem vindo!</string>
 
     <string name="app_campo_email">E-mail:</string>
+    <string name="app_campo_usuario">Usuário:</string>
     <string name="app_campo_senha">Senha:</string>
     <string name="app_campo_nomeUsuario">Nome do usuario:</string>
     <string name="app_campo_esqueciSenha">Esqueci a senha </string>
@@ -16,6 +18,7 @@
     <string name="app_componente_seus_clientes">Seus Clientes</string>
 
     <string name="app_botao_login">Login</string>
+    <string name="app_botao_criar_conta">Criar Conta</string>
     <string name="app_botao_comecar">Começar</string>
     <string name="app_botao_entrar">Entrar</string>
     <string name="app_botao_servico">Novo Serviço</string>

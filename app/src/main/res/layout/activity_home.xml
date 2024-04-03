@@ -1,6 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".home.view.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_top"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/BotaoComecar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/nomeUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Nome Usuario"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/nomeApp"
+            app:layout_constraintEnd_toStartOf="@id/ft_button_config"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nomeApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="@string/app_texto_Nome_projeto"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ft_button_config"
+            app:layout_constraintTop_toBottomOf="@id/nomeUsuario" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ft_button_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/white"
+            android:contentDescription="Configs"
+            android:src="@drawable/definicoes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_lista_servico"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/container_botaoServico"
+        app:layout_constraintTop_toBottomOf="@id/container_top">
+
+        <TextView
+            android:id="@+id/lista_servicos_pendentes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/app_componente_servico_pendente"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toStartOf="@id/iv_portaAberta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_portaAberta"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/portaaberta"
+            app:layout_constraintBottom_toBottomOf="@id/lista_servicos_pendentes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lista_servicos_pendentes"
+            app:layout_constraintTop_toTopOf="@id/lista_servicos_pendentes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listagem_pendentes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/home_service_list"
+            app:spanCount="5"
+            tools:itemCount="2"
+            app:layout_constraintStart_toStartOf="@id/lista_servicos_pendentes"
+            app:layout_constraintEnd_toEndOf="@id/iv_portaAberta"
+            app:layout_constraintTop_toBottomOf="@id/iv_portaAberta"
+            />
+
+        <TextView
+            android:id="@+id/lista_servicos_concluidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/app_componente_servico_concluidos"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_portaFechada"
+            app:layout_constraintTop_toBottomOf="@id/listagem_pendentes"/>
+
+        <ImageView
+            android:id="@+id/iv_portaFechada"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/portafechada"
+            app:layout_constraintBottom_toBottomOf="@id/lista_servicos_concluidos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lista_servicos_concluidos"
+            app:layout_constraintTop_toTopOf="@id/lista_servicos_concluidos" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listagem_concluidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/home_service_list"
+            app:spanCount="5"
+            tools:itemCount="2"
+            app:layout_constraintStart_toStartOf="@id/lista_servicos_concluidos"
+            app:layout_constraintEnd_toEndOf="@id/iv_portaFechada"
+            app:layout_constraintTop_toBottomOf="@id/iv_portaFechada"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container_botaoServico"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toTopOf="@id/container_menus">
+
+
+        <Button
+            android:id="@+id/botao_novo_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_botao_servico"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:backgroundTint="@color/BotaoPrincipal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container_menus"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/BotaoPrincipal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+
+            android:id="@+id/iv_relatorio"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/relatorionegocios"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_servico"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/iv_servico"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/servico"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_cliente"
+            app:layout_constraintStart_toEndOf="@id/iv_relatorio"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/iv_cliente"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/cliente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_servico"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

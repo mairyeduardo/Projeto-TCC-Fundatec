@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <ImageView
         android:id="@+id/splash"
         android:layout_width="wrap_content"
@@ -11,61 +12,78 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/texto_ola"
-        android:src="@drawable/ferramenta" />
-
-
-    <TextView
-        android:id="@+id/texto_ola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="@string/app_texto_Ola"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@id/texto_bem_vindo"
         app:layout_constraintBottom_toTopOf="@id/texto_bem_vindo"
-        />
+        android:src="@drawable/ferramenta" />
 
     <TextView
         android:id="@+id/texto_bem_vindo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:textSize="24sp"
-        android:text="@string/app_texto_Bem_vindo_de_Volta"
+        android:text="@string/app_texto_Seja_Bem_Vindo"
         android:textColor="@color/black"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/input_cadastro_username"
         />
-
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="30dp"
-        app:layout_constraintEnd_toStartOf="@id/input_login_email"
-        app:layout_constraintTop_toTopOf="@id/input_login_email"
-        app:layout_constraintBottom_toBottomOf="@id/input_login_email"
-        android:src="@drawable/email"
+        app:layout_constraintEnd_toStartOf="@id/input_cadastro_username"
+        app:layout_constraintTop_toTopOf="@id/input_cadastro_username"
+        app:layout_constraintBottom_toBottomOf="@id/input_cadastro_username"
+        android:src="@drawable/user"
         />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_login_email"
+        android:id="@+id/input_cadastro_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/texto_bem_vindo"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/input_login_senha"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:textColorHint="@color/corTextoInput"
         app:boxBackgroundColor="@color/InputsFundo1"
         app:boxStrokeColor="@color/inputsStroke"
         >
         <EditText
-            android:id="@+id/login_email"
+            android:id="@+id/cadastro_username"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:hint="@string/app_campo_usuario"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toStartOf="@id/input_cadastro_email"
+        app:layout_constraintTop_toTopOf="@id/input_cadastro_email"
+        app:layout_constraintBottom_toBottomOf="@id/input_cadastro_email"
+        android:src="@drawable/email"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_cadastro_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/input_cadastro_username"
+        app:layout_constraintStart_toStartOf="@id/input_cadastro_username"
+        android:textColorHint="@color/corTextoInput"
+        app:boxBackgroundColor="@color/InputsFundo1"
+        app:boxStrokeColor="@color/inputsStroke"
+        >
+        <EditText
+            android:id="@+id/cadastro_email"
             android:layout_width="280dp"
             android:layout_height="50dp"
             android:hint="@string/app_campo_email"
@@ -79,25 +97,25 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="30dp"
-        app:layout_constraintEnd_toStartOf="@id/input_login_senha"
-        app:layout_constraintTop_toTopOf="@id/input_login_senha"
-        app:layout_constraintBottom_toBottomOf="@id/input_login_senha"
+        app:layout_constraintEnd_toStartOf="@id/input_cadastro_senha"
+        app:layout_constraintTop_toTopOf="@id/input_cadastro_senha"
+        app:layout_constraintBottom_toBottomOf="@id/input_cadastro_senha"
         android:src="@drawable/chaves"
         />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_login_senha"
+        android:id="@+id/input_cadastro_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/input_login_email"
-        app:layout_constraintTop_toBottomOf="@+id/input_login_email"
+        app:layout_constraintStart_toStartOf="@+id/input_cadastro_email"
+        app:layout_constraintTop_toBottomOf="@+id/input_cadastro_email"
         android:textColorHint="@color/corTextoInput"
         app:boxBackgroundColor="@color/InputsFundo1"
         app:boxStrokeColor="@color/inputsStroke"
         >
         <EditText
-            android:id="@+id/login_senha"
+            android:id="@+id/cadastro_senha"
             android:layout_width="280dp"
             android:layout_height="50dp"
             android:textSize="20sp"
@@ -109,17 +127,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonCadastro"
         android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:text="@string/app_botao_login"
+        android:layout_height="50dp"
+        android:text="@string/app_botao_criar_conta"
         android:backgroundTint="@color/BotaoPrincipal"
+        android:background="@drawable/bt_quadrado"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_login_senha"
+        app:layout_constraintTop_toBottomOf="@+id/input_cadastro_senha"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

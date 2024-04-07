@@ -132,7 +132,6 @@
         android:layout_height="50dp"
         android:text="@string/app_botao_criar_conta"
         android:backgroundTint="@color/BotaoPrincipal"
-        android:background="@drawable/bt_quadrado"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"

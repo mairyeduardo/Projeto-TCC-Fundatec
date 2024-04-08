@@ -174,7 +174,7 @@
             android:text="Gasto inicial:"
             android:textColor="@color/black"
             android:textSize="13sp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="19dp"
             android:layout_marginTop="02dp"
             app:layout_constraintTop_toBottomOf="@+id/input_descricao_do_servico"
             app:layout_constraintStart_toEndOf="@+id/input_valor_do_servico"
@@ -417,7 +417,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/buttonLogin"
+            android:id="@+id/buttonCriarServico"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:text="Criar Serviço"

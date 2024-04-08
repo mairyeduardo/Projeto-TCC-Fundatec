@@ -15,28 +15,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/nomeUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:text="Nome Usuario"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/nomeApp"
-            app:layout_constraintEnd_toStartOf="@id/ft_button_config"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/nomeApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:text="@string/app_texto_Nome_projeto"
+            android:textStyle="italic"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ft_button_config"
-            app:layout_constraintTop_toBottomOf="@id/nomeUsuario" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/ft_button_config"

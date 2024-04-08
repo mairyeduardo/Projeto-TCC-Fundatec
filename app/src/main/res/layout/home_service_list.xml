@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/container_lista_servico"
+        android:id="@+id/card_relative"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="40dp"
+        android:layout_marginVertical="5dp"
+        android:layout_marginHorizontal="30dp"
+        >
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_pendentes"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="20dp"
-            app:cardBackgroundColor="@color/BotaoComecar"
-            app:layout_constraintStart_toStartOf="@id/container_lista_servico"
-            app:layout_constraintEnd_toEndOf="@id/container_lista_servico"
-            app:layout_constraintTop_toTopOf="@id/container_lista_servico"
-            app:layout_constraintBottom_toBottomOf="@id/container_lista_servico"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_lista_servicos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/BotaoComecar"
             >
 
             <TextView
-                android:id="@+id/titulo_servico"
+                android:id="@+id/titulo_servicso"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="20sp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="05dp"
                 android:textColor="@color/white"
                 android:text="nome servico exemplo"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
 
-        </androidx.cardview.widget.CardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/icon_seta"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/relatorionegocios"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

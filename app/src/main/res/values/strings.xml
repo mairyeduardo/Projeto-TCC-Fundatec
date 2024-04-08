@@ -23,6 +23,12 @@
     <string name="app_botao_entrar">Entrar</string>
     <string name="app_botao_servico">Novo Serviço</string>
 
+    <string name="app_mensagem_sucessoCriacao">Conta criada com sucesso!</string>
+    <string name="app_mensagem_erroNomeOnboarding">Erro ao cadastrar, insira um nome válido</string>
+    <string name="app_mensagem_erroEmailOnboarding">Erro ao cadastrar, insira um email válido</string>
+    <string name="app_mensagem_erroPasswordOnboarding">Erro ao cadastrar, insira uma senha válida</string>
+    <string name="app_mensagem_erroGeralCriacao">Erro ao cadastrar, campos vazios</string>
+
     <string name="app_mensagem_erroEmailLogin">Erro ao logar, insira um email válido</string>
     <string name="app_mensagem_erroPasswordLogin">Erro ao logar, insira uma senha válida</string>
     <string name="app_mensagem_sucessoLogin">Login realizado com sucesso!</string>

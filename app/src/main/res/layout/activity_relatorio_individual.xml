@@ -40,4 +40,339 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_lista_servico"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/container_menus"
+        app:layout_constraintTop_toBottomOf="@id/container_top"
+        >
+
+        <TextView
+            android:id="@+id/texto_relatorio_do_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Relatório do Serviço"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/linha"
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texto_relatorio_do_servico"
+            />
+
+        <TextView
+            android:id="@+id/texto_data_inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Data de inicio:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha"
+            app:layout_constraintTop_toBottomOf="@id/linha" />
+
+        <TextView
+            android:id="@+id/data_inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="exemplo"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/texto_data_inicio"
+            app:layout_constraintTop_toBottomOf="@id/linha" />
+
+        <TextView
+            android:id="@+id/texto_data_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Data de finalização:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha"
+            app:layout_constraintTop_toBottomOf="@+id/texto_data_inicio" />
+
+        <TextView
+            android:id="@+id/data_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="exemplo"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/texto_data_final"
+            app:layout_constraintTop_toBottomOf="@id/data_inicio" />
+
+        <View
+            android:id="@+id/linha2"
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texto_data_final"
+            />
+
+        <TextView
+            android:id="@+id/texto_titulo_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Titulo do Serviço:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/linha2" />
+
+        <TextView
+            android:id="@+id/titulo_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="exemplo de titulo"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/texto_titulo_servico" />
+
+        <TextView
+            android:id="@+id/texto_descricao_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Descrição do Serviço:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/titulo_servico" />
+
+        <TextView
+            android:id="@+id/descricao_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="exemplo de descrição"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/texto_descricao_servico" />
+
+        <TextView
+            android:id="@+id/texto_dias_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Total de dias:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/descricao_servico" />
+
+        <TextView
+            android:id="@+id/dias_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/texto_dias_servico" />
+
+        <TextView
+            android:id="@+id/texto_nome_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cliente:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/dias_servico" />
+
+        <TextView
+            android:id="@+id/nome_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Nome Cliente exemplo"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/texto_nome_cliente" />
+
+        <TextView
+            android:id="@+id/texto_endereco_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Endereço do Serviço:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/nome_cliente" />
+
+        <TextView
+            android:id="@+id/endereco_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="rua teste exemplo, 22"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/linha2"
+            app:layout_constraintTop_toBottomOf="@+id/texto_endereco_cliente" />
+
+        <View
+            android:id="@+id/linha3"
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/endereco_cliente"
+            />
+
+        <TextView
+            android:id="@+id/texto_valor_bruto_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Valor Bruto do Serviço:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha3"
+            app:layout_constraintTop_toBottomOf="@+id/linha3" />
+
+        <TextView
+            android:id="@+id/valor_bruto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="3.000,20"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/linha3"
+            app:layout_constraintTop_toBottomOf="@id/linha3" />
+
+        <TextView
+            android:id="@+id/texto_valor_despesa_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Despesas Totais:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha3"
+            app:layout_constraintTop_toBottomOf="@+id/texto_valor_bruto_servico" />
+
+        <TextView
+            android:id="@+id/despesas_totais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="2.000,20"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/linha3"
+            app:layout_constraintTop_toBottomOf="@+id/valor_bruto" />
+
+        <TextView
+            android:id="@+id/texto_valor_liquido_servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Valor liquido total:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/linha4"
+            app:layout_constraintTop_toBottomOf="@+id/linha4" />
+
+        <TextView
+            android:id="@+id/liquido_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="1.000,20"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/linha4"
+            app:layout_constraintTop_toBottomOf="@+id/linha4" />
+
+        <View
+            android:id="@+id/linha4"
+            android:layout_width="320dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texto_valor_despesa_servico"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container_menus"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/BotaoPrincipal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+
+            android:id="@+id/iv_relatorio"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/relatorionegocios"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_servico"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/iv_servico"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/servico"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_cliente"
+            app:layout_constraintStart_toEndOf="@id/iv_relatorio"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:id="@+id/iv_cliente"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/cliente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_servico"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

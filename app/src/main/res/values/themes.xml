@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.ProjetoTCC" parent="Base.Theme.ProjetoTCC" />
+
+    <style name="RoundedShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Ajuste o valor conforme necessário -->
+    </style>
+
 </resources>

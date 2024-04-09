@@ -11,7 +11,7 @@ import kotlinx.coroutines.withContext
 
 class LoginRepository {
     private val repository = RetrofitNetworkClient.createNetworkClient(
-        baseUrl = "http://10.0.4.22:8081/solocraft/"
+        baseUrl = "http://3.237.94.2:8081/solocraft/"
     ).create(LoginService::class.java)
 
     private val database: FHDatabase by lazy {
@@ -49,16 +49,6 @@ class LoginRepository {
                 false
             }
         }
-    }
-
-
-    private fun LoginResponse.tooUserEntity(): UserEntity {
-        return UserEntity(
-            id = id,
-            nome = nome,
-            email = email,
-            senha = senha
-        )
     }
 
     suspend fun clearDateCache() {

@@ -23,6 +23,11 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".cadastro.view.CadastroActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".home.view.HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait"></activity>
@@ -30,9 +35,8 @@
         <activity
             android:name=".inicial.view.InicialActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"></activity>
 
-        </activity>
         <activity
             android:name=".splash.view.SplashActivity"
             android:exported="true"

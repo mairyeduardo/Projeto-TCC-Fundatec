@@ -6,11 +6,13 @@ import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projetotcc.cliente.view.ClienteActivity
 import com.example.projetotcc.databinding.ActivityHomeBinding
 import com.example.projetotcc.databinding.ActivityLoginBinding
 import com.example.projetotcc.relatorio.view.RelatorioActivity
 
 private const val DELAY_TELA = 1000L
+
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
@@ -22,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         configurarBotaoRelatorio()
+        configurarBotaoCliente()
     }
 
     private fun chamarTelaRelatorio() {
@@ -31,9 +34,22 @@ class HomeActivity : AppCompatActivity() {
         }, DELAY_TELA)
     }
 
+    private fun chamarTelaCliente() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@HomeActivity, ClienteActivity::class.java)
+            startActivity(intent)
+        }, DELAY_TELA)
+    }
+
     private fun configurarBotaoRelatorio() {
         binding.ivRelatorio.setOnClickListener {
             chamarTelaRelatorio()
+        }
+    }
+
+    private fun configurarBotaoCliente() {
+        binding.ivCliente.setOnClickListener{
+            chamarTelaCliente()
         }
     }
 }

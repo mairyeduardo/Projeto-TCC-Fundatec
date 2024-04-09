@@ -38,6 +38,11 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".cliente.view.ClienteActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".inicial.view.InicialActivity"
             android:exported="true"
             android:screenOrientation="portrait"></activity>

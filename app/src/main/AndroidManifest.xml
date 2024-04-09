@@ -33,6 +33,21 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".relatorio.view.RelatorioActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".cliente.view.ClienteActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".servico.view.NovoServicoActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".inicial.view.InicialActivity"
             android:exported="true"
             android:screenOrientation="portrait"></activity>

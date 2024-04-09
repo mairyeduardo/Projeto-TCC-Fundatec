@@ -49,6 +49,8 @@ class CadastroViewModel: ViewModel() {
                 )
                 if (isSuccess) {
                     viewState.value = CadastroViewState.ShowLoginScreen
+                } else {
+                    viewState.value = CadastroViewState.ShowGeralError
                 }
             }
         }

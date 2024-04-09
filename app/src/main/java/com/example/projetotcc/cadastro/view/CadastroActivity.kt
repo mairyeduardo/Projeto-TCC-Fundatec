@@ -46,12 +46,18 @@ class CadastroActivity : AppCompatActivity() {
                 CadastroViewState.ShowPasswordError ->
                     binding.cadastroSenha.showError(R.string.app_mensagem_erroPasswordOnboarding)
 
+                CadastroViewState.ShowGeralError -> showSnackBar(
+                    binding.root,
+                    R.string.app_mensagem_erroGeralCriacao,
+                    R.color.MensagemVermelhoError
+                )
+
                 CadastroViewState.ShowLoginScreen ->
                     chamarTelaLogin()
 
                 CadastroViewState.ShowNameEmailPasswordError -> showSnackBar(
                     binding.root,
-                    R.string.app_mensagem_erroGeralCriacao,
+                    R.string.app_mensagem_erroCamposCriacao,
                     R.color.MensagemVermelhoError
                 )
             }

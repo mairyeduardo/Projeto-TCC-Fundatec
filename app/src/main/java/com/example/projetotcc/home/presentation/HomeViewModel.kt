@@ -19,6 +19,7 @@ class HomeViewModel: ViewModel() {
     val state: LiveData<HomeViewState> = viewState
 
     private fun buscarServicos() {
+        viewState.value = HomeViewState.ShowLoading
         viewModelScope.launch {
             val listarServicos = useCase.buscarTarefaPorIdUsuario()
             if (listarServicos.isNotEmpty()) {
@@ -26,6 +27,7 @@ class HomeViewModel: ViewModel() {
             } else {
                 viewState.value = HomeViewState.Error("Lista de serviços vazia")
             }
+            viewState.value = HomeViewState.StopLoading
         }
     }
 

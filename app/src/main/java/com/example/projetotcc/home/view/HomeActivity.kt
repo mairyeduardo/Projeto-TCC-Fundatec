@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projetotcc.cliente.view.ClienteActivity
 import com.example.projetotcc.databinding.ActivityHomeBinding
 import com.example.projetotcc.databinding.ActivityLoginBinding
+import com.example.projetotcc.gone
 import com.example.projetotcc.home.domain.ServicoModel
 import com.example.projetotcc.home.presentation.HomeViewModel
 import com.example.projetotcc.home.presentation.model.HomeViewState
@@ -21,6 +22,7 @@ import com.example.projetotcc.relatorio.view.RelatorioActivity
 import com.example.projetotcc.servico.view.DetalhesServicoConcluido
 import com.example.projetotcc.servico.view.DetalhesServicoPendente
 import com.example.projetotcc.servico.view.NovoServicoActivity
+import com.example.projetotcc.visible
 
 private const val DELAY_TELA = 1000L
 
@@ -55,6 +57,12 @@ class HomeActivity : AppCompatActivity() {
                 is HomeViewState.Error ->
                     it.errorMessage
 
+                HomeViewState.ShowLoading -> {
+                    binding.progressBar.visible()
+                }
+                HomeViewState.StopLoading -> {
+                    binding.progressBar.gone()
+                }
             }
         }
 

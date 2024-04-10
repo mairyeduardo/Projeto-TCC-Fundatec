@@ -8,7 +8,13 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 
+fun View.gone() {
+    visibility = View.GONE
+}
 
+fun View.visible() {
+    visibility = View.VISIBLE
+}
 
 fun EditText.showError(
     @StringRes snackbarMessage: Int,

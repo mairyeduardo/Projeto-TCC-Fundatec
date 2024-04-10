@@ -14,5 +14,5 @@ interface UserDao {
     fun clearCache()
 
     @Query("SELECT id FROM user_table LIMIT 1")
-    fun pegarId(): Int
+    fun pegarId(): Long
 }

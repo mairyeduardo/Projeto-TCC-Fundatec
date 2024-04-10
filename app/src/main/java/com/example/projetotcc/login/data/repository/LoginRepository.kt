@@ -57,7 +57,7 @@ class LoginRepository {
         }
     }
 
-    suspend fun pegarId(): Int {
+    suspend fun pegarId(): Long {
         return withContext(Dispatchers.IO) {
             database.userDao().pegarId()
         }

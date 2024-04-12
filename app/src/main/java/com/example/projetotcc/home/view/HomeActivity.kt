@@ -35,7 +35,6 @@ class HomeActivity : AppCompatActivity() {
         ServicoListAdapter() {
             Log.e("Home Activity", it.toString())
             chamarTelaDetalhesDoServicoPendente(it)
-            chamarTelaDetalhesDoServicoConcluido(it)
         }
     }
 

@@ -37,7 +37,7 @@ interface ServicoService {
 
     @GET("api/v1/servico/usuario/{idUsuario}")
     suspend fun buscarTarefasPorIdUsuario(
-        @Path("idUsuario") idUsuario: Long,
+        @Path("idUsuario") idUsuario: Int,
     ): Response<List<ServicoResponse>>
 
     @GET("api/v1/servico/cliente/{idCliente}")

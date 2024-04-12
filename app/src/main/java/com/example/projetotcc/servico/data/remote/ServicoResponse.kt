@@ -4,17 +4,17 @@ import java.math.BigDecimal
 import java.time.LocalDate
 
 data class ServicoResponse (
-    val id: Long,
-    val idUsuario: Long,
+    val id: Int,
+    val idUsuario: Int,
     val titulo: String,
     val descricao: String,
-    val valorServico: BigDecimal,
-    val custoAtual: BigDecimal,
-    val custoSoma: BigDecimal?,
-    val dataInicio: LocalDate,
-    val dataFinal: LocalDate?,
+    val valorServico: Double,
+    val custoAtual: Double,
+    val custoSoma: Double?,
+    val dataInicio: String,
+    val dataFinal: String?,
     val enderecoServico: String,
     val statusTarefa: String,
-    val idCliente: Long,
+    val idCliente: Int,
     val nomeCliente: String
 )

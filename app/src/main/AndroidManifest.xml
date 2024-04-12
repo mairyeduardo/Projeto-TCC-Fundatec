@@ -32,6 +32,11 @@
             android:exported="true"
             android:screenOrientation="portrait"></activity>
 
+        <activity android:name=".servico.view.DetalhesServicoPendente"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+
         <activity
             android:name=".relatorio.view.RelatorioActivity"
             android:exported="true"

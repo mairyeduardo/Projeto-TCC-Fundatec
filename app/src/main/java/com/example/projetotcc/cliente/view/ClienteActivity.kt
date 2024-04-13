@@ -65,7 +65,7 @@ class ClienteActivity : AppCompatActivity() {
 
     private fun chamarTelaDetalhesDoCliente(clienteModel: ClienteModel) {
         val intent = Intent(this@ClienteActivity, ClienteDetailsActivity::class.java)
-        intent.putExtra("clienteDetails", clienteModel)
+        intent.putExtra("cliente", clienteModel)
         startActivity(intent)
     }
 

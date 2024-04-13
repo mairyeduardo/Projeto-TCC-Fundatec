@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projetotcc.cliente.domain.ClienteModel
 import com.example.projetotcc.databinding.ClienteListagemBinding
 
+
 class ClienteViewHolder(
     private val binding: ClienteListagemBinding,
     private val click: (ClienteModel) -> Unit
@@ -14,7 +15,7 @@ class ClienteViewHolder(
         binding.variavelLocal.text = cliente.enderecoPrincipal
         binding.variavelTelefone.text = cliente.telefone
 
-        binding.cardRelative.setOnClickListener {
+        binding.cardRelativeCliente.setOnClickListener {
             click(cliente)
         }
     }

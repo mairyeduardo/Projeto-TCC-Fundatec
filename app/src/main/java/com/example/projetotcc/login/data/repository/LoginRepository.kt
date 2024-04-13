@@ -43,12 +43,24 @@ class LoginRepository {
                     email = email,
                     senha = senha,
                 )
+                response.body()?.tooUserEntity(senha)?.let { userEntity ->
+                    database.userDao().insertUser(userEntity)
+                }
                 response.isSuccessful
             } catch (ex: java.lang.Exception) {
                 Log.e("verificarUser", ex.message.toString())
                 false
             }
         }
+    }
+
+    private fun LoginResponse.tooUserEntity(senha: String): UserEntity {
+        return UserEntity(
+            id = id,
+            nome = nome,
+            email = email,
+            senha = senha
+        )
     }
 
     suspend fun clearDateCache() {

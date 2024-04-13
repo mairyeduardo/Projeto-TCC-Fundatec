@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".home.view.HomeActivity">
+    android:background="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_top"
@@ -351,6 +350,7 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <Button
+                android:id="@+id/text_nome_cliente"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"

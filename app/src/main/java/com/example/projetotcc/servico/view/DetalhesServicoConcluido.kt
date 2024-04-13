@@ -1,11 +1,16 @@
 package com.example.projetotcc.servico.view
 
+import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projetotcc.cliente.view.ClienteActivity
 import com.example.projetotcc.databinding.ActivityDetalhesServicoConcluidoBinding
 import com.example.projetotcc.home.domain.ServicoModel
+import com.example.projetotcc.home.view.HomeActivity
+import com.example.projetotcc.relatorio.view.RelatorioActivity
 
 
 private const val DELAY_TELA = 1000L
@@ -35,6 +40,50 @@ class DetalhesServicoConcluido : AppCompatActivity(){
         binding.textNomeCliente.text = servico.nomeCliente
         Log.e("teste", servico.toString())
 
+        configurarBotaoRelatorio()
+        configurarBotaoCliente()
+        configurarBotaoHome()
+
     }
+
+    private fun chamarTelaCliente() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@DetalhesServicoConcluido, ClienteActivity::class.java)
+            startActivity(intent)
+        }, DELAY_TELA)
+    }
+
+    private fun chamarTelaRelatorio() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@DetalhesServicoConcluido, RelatorioActivity::class.java)
+            startActivity(intent)
+        }, DELAY_TELA)
+    }
+
+    private fun chamarTelaHome() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@DetalhesServicoConcluido, HomeActivity::class.java)
+            startActivity(intent)
+        }, DELAY_TELA)
+    }
+
+    private fun configurarBotaoRelatorio() {
+        binding.ivRelatorio.setOnClickListener {
+            chamarTelaRelatorio()
+        }
+    }
+
+    private fun configurarBotaoCliente() {
+        binding.ivCliente.setOnClickListener {
+            chamarTelaCliente()
+        }
+    }
+
+    private fun configurarBotaoHome() {
+        binding.ivServico.setOnClickListener {
+            chamarTelaHome()
+        }
+    }
+
 
 }

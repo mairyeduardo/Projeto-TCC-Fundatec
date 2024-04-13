@@ -39,6 +39,14 @@ class ServicoUseCase {
         return repository.buscarTarefaPorIdUsuario()
     }
 
+    suspend fun buscarTarefasPendentesPorIdUsuario(): List<ServicoResponse> {
+        return repository.buscarTarefasPendentesPorIdUsuario()
+    }
+
+    suspend fun buscarTarefasConcluidasPorIdUsuario(): List<ServicoResponse> {
+        return repository.buscarTarefasConcluidasPorIdUsuario()
+    }
+
     suspend fun buscarTarefasPorIdCliente(clienteId: Long): List<ServicoResponse> {
         return repository.buscarTarefasPorIdCliente(clienteId)
     }

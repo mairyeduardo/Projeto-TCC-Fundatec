@@ -17,6 +17,7 @@ import com.example.projetotcc.databinding.ActivityLoginBinding
 import com.example.projetotcc.gone
 import com.example.projetotcc.home.domain.ServicoModel
 import com.example.projetotcc.home.presentation.HomeViewModel
+import com.example.projetotcc.home.presentation.HomeViewModelConcluidos
 import com.example.projetotcc.home.presentation.model.HomeViewState
 import com.example.projetotcc.relatorio.view.RelatorioActivity
 import com.example.projetotcc.servico.view.DetalhesServicoConcluido
@@ -30,11 +31,19 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
     private val viewModel: HomeViewModel by viewModels()
+    private val viewModelConcluidos: HomeViewModelConcluidos by viewModels()
 
     private val adapter: ServicoListAdapter by lazy {
         ServicoListAdapter() {
             Log.e("Home Activity", it.toString())
             chamarTelaDetalhesDoServicoPendente(it)
+        }
+    }
+
+    private val adapterConcluidos: ServicoListAdapter by lazy {
+        ServicoListAdapter() {
+            Log.e("Home Activity", it.toString())
+            chamarTelaDetalhesDoServicoConcluido(it)
         }
     }
 
@@ -46,10 +55,31 @@ class HomeActivity : AppCompatActivity() {
 
 
         binding.listagemPendentes.adapter = adapter
+        binding.listagemConcluidos.adapter = adapterConcluidos
+
         viewModel.state.observe(this) {
             when (it) {
                 is HomeViewState.Success ->
                     adapter.addList(
+                        it.list
+                    )
+
+                is HomeViewState.Error ->
+                    it.errorMessage
+
+                HomeViewState.ShowLoading -> {
+                    binding.progressBar.visible()
+                }
+                HomeViewState.StopLoading -> {
+                    binding.progressBar.gone()
+                }
+            }
+        }
+
+        viewModelConcluidos.state.observe(this) {
+            when (it) {
+                is HomeViewState.Success ->
+                    adapterConcluidos.addList(
                         it.list
                     )
 

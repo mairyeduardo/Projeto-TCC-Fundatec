@@ -40,6 +40,16 @@ interface ServicoService {
         @Path("idUsuario") idUsuario: Int,
     ): Response<List<ServicoResponse>>
 
+    @GET("api/v1/servico/pendente/usuario/{idUsuario}")
+    suspend fun buscarTarefasPendentesPorIdUsuario(
+        @Path("idUsuario") idUsuario: Int,
+    ): Response<List<ServicoResponse>>
+
+    @GET("api/v1/servico/concluida/usuario/{idUsuario}")
+    suspend fun buscarTarefasConcluidasPorIdUsuario(
+        @Path("idUsuario") idUsuario: Int,
+    ): Response<List<ServicoResponse>>
+
     @GET("api/v1/servico/cliente/{idCliente}")
     suspend fun buscarTarefasPorIdCliente(
         @Path("idCliente") idCliente: Long,

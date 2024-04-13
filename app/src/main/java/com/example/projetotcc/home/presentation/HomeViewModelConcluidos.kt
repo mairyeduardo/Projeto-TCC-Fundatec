@@ -9,7 +9,7 @@ import com.example.projetotcc.home.presentation.model.HomeViewState
 import com.example.projetotcc.servico.domain.ServicoUseCase
 import kotlinx.coroutines.launch
 
-class HomeViewModel: ViewModel() {
+class HomeViewModelConcluidos: ViewModel()  {
 
     private val useCase by lazy {
         ServicoUseCase()
@@ -18,34 +18,20 @@ class HomeViewModel: ViewModel() {
     private val viewState: MutableLiveData<HomeViewState> = MutableLiveData()
     val state: LiveData<HomeViewState> = viewState
 
-    private fun buscarServicos() {
+    fun buscarServicosConcluidos() {
         viewState.value = HomeViewState.ShowLoading
         viewModelScope.launch {
-            val listarServicos = useCase.buscarTarefaPorIdUsuario()
+            val listarServicos = useCase.buscarTarefasConcluidasPorIdUsuario()
             if (listarServicos.isNotEmpty()) {
                 viewState.value = HomeViewState.Success(listarServicos.toModel())
             } else {
-                viewState.value = HomeViewState.Error("Lista de serviços vazia")
+                viewState.value = HomeViewState.Error("Lista de serviços concluidas vazia")
             }
             viewState.value = HomeViewState.StopLoading
         }
     }
-
-    fun buscarServicosPendentes() {
-        viewState.value = HomeViewState.ShowLoading
-        viewModelScope.launch {
-            val listarServicos = useCase.buscarTarefasPendentesPorIdUsuario()
-            if (listarServicos.isNotEmpty()) {
-                viewState.value = HomeViewState.Success(listarServicos.toModel())
-            } else {
-                viewState.value = HomeViewState.Error("Lista de serviços pendentes vazia")
-            }
-            viewState.value = HomeViewState.StopLoading
-        }
-    }
-
 
     init {
-        buscarServicosPendentes()
+        buscarServicosConcluidos()
     }
 }

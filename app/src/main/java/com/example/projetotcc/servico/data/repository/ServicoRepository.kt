@@ -70,6 +70,35 @@ class ServicoRepository {
         }
     }
 
+    suspend fun buscarTarefasPendentesPorIdUsuario(): List<ServicoResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.buscarTarefasPendentesPorIdUsuario(
+                    idUsuario = loginRepository.pegarId()
+                )
+                response.body()?: listOf()
+            } catch (ex: Exception) {
+                Log.e("ListaDeServicosPendentes", ex.message.toString())
+                listOf()
+            }
+        }
+    }
+
+    suspend fun buscarTarefasConcluidasPorIdUsuario(): List<ServicoResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.buscarTarefasConcluidasPorIdUsuario(
+                    idUsuario = loginRepository.pegarId()
+                )
+                response.body()?: listOf()
+            } catch (ex: Exception){
+                Log.e("ListaDeServicosConcluidos", ex.message.toString())
+                listOf()
+            }
+        }
+    }
+
+
     suspend fun buscarTarefasPorIdCliente(clienteId: Long): List<ServicoResponse> {
         return withContext(Dispatchers.IO) {
             try {

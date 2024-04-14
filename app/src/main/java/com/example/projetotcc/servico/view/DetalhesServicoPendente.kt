@@ -65,10 +65,38 @@ class DetalhesServicoPendente : AppCompatActivity() {
                         R.color.MensagemVermelhoError
                     )
 
+                    is ServicoPendenteViewState.ShowFinalizarError -> TODO()
                 }
             }
 
         }
+
+
+        binding.buttonFinalizarServico.setOnClickListener {
+            detalhesServicosViewModel.finalizarTarefa(servico.id)
+            detalhesServicosViewModel.state.observe(this) {
+                when(it) {
+
+                    is ServicoPendenteViewState.ShowHomeScreen -> {
+                        chamarTelaHome()
+                        showSnackBar(
+                            binding.root,
+                            R.string.app_detalhesServico_BotaoFinalizar_sucesso,
+                            R.color.MensagemVerdeSucesso
+                        )
+                    }
+
+                    is ServicoPendenteViewState.ShowFinalizarError -> showSnackBar(
+                        binding.root,
+                        R.string.app_detalhesServico_BotaoFinalizar_error,
+                        R.color.MensagemVermelhoError
+                    )
+
+                    is ServicoPendenteViewState.ShowExcluirError -> TODO()
+                }
+            }
+        }
+
 
 
 

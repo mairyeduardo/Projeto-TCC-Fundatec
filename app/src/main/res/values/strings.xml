@@ -35,6 +35,8 @@
 
     <string name="app_detalhesServico_BotaoExcluir_error">Erro ao excluir, tente novamente</string>
     <string name="app_detalhesServico_BotaoExcluir_sucesso">Sucesso ao excluir tarefa</string>
+    <string name="app_detalhesServico_BotaoFinalizar_sucesso">Sucesso ao finalizar tarefa</string>
+    <string name="app_detalhesServico_BotaoFinalizar_error"> Erro ao finalizar servico, tente novamente</string>
 
     <string name="app_mensagem_sucessoCriacao">Conta criada com sucesso!</string>
     <string name="app_mensagem_erroNomeOnboarding">Erro ao cadastrar, insira um nome válido</string>

@@ -31,4 +31,20 @@ class DetalhesServicoPendenteViewModel: ViewModel() {
             }
         }
     }
+
+    fun finalizarTarefa (servicoId: Int) {
+
+        viewModelScope.launch {
+            val isSuccess = useCase.finalizarTarefaPorId(
+                servicoId = servicoId
+            )
+            if (isSuccess) {
+                viewState.value = ServicoPendenteViewState.ShowHomeScreen
+            } else {
+                viewState.value = ServicoPendenteViewState.ShowFinalizarError
+            }
+        }
+
+    }
+
 }

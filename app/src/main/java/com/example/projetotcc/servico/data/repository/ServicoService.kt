@@ -26,7 +26,7 @@ interface ServicoService {
 
     @PUT("api/v1/servico/finalizar/{idTarefa}")
     suspend fun finalizarTarefaPorId(
-        @Path("idTarefa") idTarefa: Long,
+        @Path("idTarefa") idTarefa: Int,
     ): Response<ServicoResponse>
 
     @PATCH("api/v1/servico/custo/{idTarefa}")

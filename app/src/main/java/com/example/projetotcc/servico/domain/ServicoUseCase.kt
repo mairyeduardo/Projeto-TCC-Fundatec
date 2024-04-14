@@ -11,9 +11,9 @@ class ServicoUseCase {
 
     suspend fun criarServico(
         titulo: String,
-        descricao: String?,
+        descricao: String,
         valorServico: Double,
-        custoAtual: Double?,
+        custoAtual: Double,
         dataInicio: String,
         enderecoServico: String,
         nome: String,

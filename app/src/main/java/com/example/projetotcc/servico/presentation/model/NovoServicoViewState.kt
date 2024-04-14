@@ -6,7 +6,11 @@ sealed class NovoServicoViewState {
 
     object ShowTituloError: NovoServicoViewState()
 
+    object ShowDescricaoError: NovoServicoViewState()
+
     object ShowValorError: NovoServicoViewState()
+
+    object ShowCustoAtualError: NovoServicoViewState()
 
     object ShowEnderecoError: NovoServicoViewState()
 

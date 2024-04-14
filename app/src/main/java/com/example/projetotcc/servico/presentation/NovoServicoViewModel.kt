@@ -19,9 +19,9 @@ class NovoServicoViewModel : ViewModel() {
 
     fun validarPreenchimentoDoServico(
         titulo: String,
-        descricao: String?,
+        descricao: String,
         valorServico: String,
-        custoAtual: String?,
+        custoAtual: String,
         dataInicio: String,
         enderecoServico: String,
         nome: String,
@@ -29,13 +29,20 @@ class NovoServicoViewModel : ViewModel() {
         enderecoCliente: String,
     ) {
 
-        if (titulo.isNullOrBlank() && valorServico.isNullOrBlank() && dataInicio.isNullOrBlank() && enderecoServico.isNullOrBlank() && nome.isNullOrBlank() && telefone.isNullOrBlank() && enderecoCliente.isNullOrBlank()) {
-
+        if (titulo.isNullOrBlank() && descricao.isNullOrBlank() && valorServico.isNullOrBlank() && custoAtual.isNullOrBlank() && dataInicio.isNullOrBlank() && enderecoServico.isNullOrBlank() && nome.isNullOrBlank() && telefone.isNullOrBlank() && enderecoCliente.isNullOrBlank()) {
+            viewState.value = NovoServicoViewState.ShowGeralError
+            return
         } else if (titulo.isNullOrBlank()) {
             viewState.value = NovoServicoViewState.ShowTituloError
             return
+        } else if (descricao.isNullOrBlank()) {
+            viewState.value = NovoServicoViewState.ShowDescricaoError
+            return
         } else if (valorServico.isNullOrBlank()) {
             viewState.value = NovoServicoViewState.ShowValorError
+            return
+        } else if (custoAtual.isNullOrBlank()) {
+            viewState.value = NovoServicoViewState.ShowCustoAtualError
             return
         } else if (dataInicio.isNullOrBlank()) {
             viewState.value = NovoServicoViewState.ShowDataInicioError
@@ -58,7 +65,7 @@ class NovoServicoViewModel : ViewModel() {
                     titulo = titulo,
                     descricao = descricao,
                     valorServico = valorServico.toDouble(),
-                    custoAtual = custoAtual?.toDouble(),
+                    custoAtual = custoAtual.toDouble(),
                     dataInicio = dataInicio,
                     enderecoServico = enderecoServico,
                     nome = nome,

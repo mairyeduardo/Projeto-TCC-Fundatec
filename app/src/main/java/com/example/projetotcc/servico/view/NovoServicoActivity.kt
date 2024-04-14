@@ -55,8 +55,14 @@ class NovoServicoActivity : AppCompatActivity() {
                 NovoServicoViewState.ShowTituloError ->
                     binding.titulo.showError(R.string.app_novoServico_titulo_error)
 
+                NovoServicoViewState.ShowDescricaoError ->
+                    binding.descricao.showError(R.string.app_novoServico_descricao_error)
+
                 NovoServicoViewState.ShowValorError ->
                     binding.valor.showError(R.string.app_novoServico_valorServico_error)
+
+                NovoServicoViewState.ShowCustoAtualError ->
+                    binding.gasto.showError(R.string.app_novoServico_custoAtual_error)
 
                 NovoServicoViewState.ShowEnderecoError ->
                     binding.enderecoS.showError(R.string.app_novoServico_enderecoServico_error)

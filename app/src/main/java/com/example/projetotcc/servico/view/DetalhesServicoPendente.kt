@@ -14,6 +14,7 @@ import com.example.projetotcc.cliente.view.ClienteActivity
 import com.example.projetotcc.databinding.ActivityDetalhesServicoPendenteBinding
 import com.example.projetotcc.home.domain.ServicoModel
 import com.example.projetotcc.home.view.HomeActivity
+import com.example.projetotcc.home.view.ServicoListAdapter
 import com.example.projetotcc.relatorio.view.RelatorioActivity
 import com.example.projetotcc.servico.presentation.DetalhesServicoPendenteViewModel
 import com.example.projetotcc.servico.presentation.model.ServicoPendenteViewState
@@ -67,6 +68,7 @@ class DetalhesServicoPendente : AppCompatActivity() {
                     )
 
                     is ServicoPendenteViewState.ShowFinalizarError -> TODO()
+                    is ServicoPendenteViewState.ShowAdicionarError -> TODO()
                 }
             }
 
@@ -94,11 +96,12 @@ class DetalhesServicoPendente : AppCompatActivity() {
                     )
 
                     is ServicoPendenteViewState.ShowExcluirError -> TODO()
+                    is ServicoPendenteViewState.ShowAdicionarError -> TODO()
                 }
             }
         }
 
-        configurarBotaoAdicionarCusto()
+        configurarBotaoAdicionarCusto(servico)
         configurarBotaoRelatorio()
         configurarBotaoCliente()
         configurarBotaoHome()
@@ -126,16 +129,17 @@ class DetalhesServicoPendente : AppCompatActivity() {
         }, DELAY_TELA)
     }
 
-    private fun chamarTelaAdicionarCusto() {
+    private fun chamarTelaAdicionarCusto(servicoModel: ServicoModel) {
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this@DetalhesServicoPendente, AdicionarCustoActivity::class.java)
+            intent.putExtra("servico",servicoModel)
             startActivity(intent)
         }, DELAY_TELA)
     }
 
-    private fun configurarBotaoAdicionarCusto() {
+    private fun configurarBotaoAdicionarCusto(servicoModel: ServicoModel) {
         binding.buttonAdicionarCusto.setOnClickListener {
-            chamarTelaAdicionarCusto()
+            chamarTelaAdicionarCusto(servicoModel)
         }
     }
 

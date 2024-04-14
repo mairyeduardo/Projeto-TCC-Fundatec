@@ -8,7 +8,7 @@ import com.example.projetotcc.servico.domain.ServicoUseCase
 import com.example.projetotcc.servico.presentation.model.ServicoPendenteViewState
 import kotlinx.coroutines.launch
 
-class DetalhesServicoPendenteViewModel: ViewModel() {
+class DetalhesServicoPendenteViewModel : ViewModel() {
 
 
     private val useCase by lazy {
@@ -18,7 +18,7 @@ class DetalhesServicoPendenteViewModel: ViewModel() {
     private val viewState: MutableLiveData<ServicoPendenteViewState> = MutableLiveData()
     val state: LiveData<ServicoPendenteViewState> = viewState
 
-    fun deletarTarefa (servicoId: Int) {
+    fun deletarTarefa(servicoId: Int) {
 
         viewModelScope.launch {
             val isSuccess = useCase.deletarServicoPorId(
@@ -32,7 +32,7 @@ class DetalhesServicoPendenteViewModel: ViewModel() {
         }
     }
 
-    fun finalizarTarefa (servicoId: Int) {
+    fun finalizarTarefa(servicoId: Int) {
 
         viewModelScope.launch {
             val isSuccess = useCase.finalizarTarefaPorId(
@@ -45,6 +45,24 @@ class DetalhesServicoPendenteViewModel: ViewModel() {
             }
         }
 
+    }
+
+    fun adicionarCustoTarefa(servicoId: Int, custoSoma: String) {
+        if (custoSoma.isNullOrBlank()) {
+            viewState.value = ServicoPendenteViewState.ShowAdicionarError
+        } else {
+            viewModelScope.launch {
+                val isSuccess = useCase.adicionarCustoPorIdTarefa(
+                    servicoId = servicoId,
+                    custoSoma = custoSoma.toDouble()
+                )
+                if (isSuccess) {
+                    viewState.value = ServicoPendenteViewState.ShowHomeScreen
+                } else {
+                    viewState.value = ServicoPendenteViewState.ShowAdicionarError
+                }
+            }
+        }
     }
 
 }

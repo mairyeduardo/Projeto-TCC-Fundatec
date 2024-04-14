@@ -61,6 +61,30 @@ class ServicoRepository {
         }
     }
 
+    suspend fun adicionarCustoPorIdTarefa(servicoId: Int, custoSoma:Double): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.adicionarCustoPorIdTarefa(
+                    servicoId, servicoRequest = ServicoRequest(
+                        idUsuario = null,
+                        titulo = null,
+                        descricao = null,
+                        valorServico = null,
+                        custoAtual = null,
+                        custoSoma = custoSoma,
+                        dataInicio = null,
+                        enderecoServico = null,
+                        cliente = null
+                    )
+                )
+                response.isSuccessful
+            } catch (ex: Exception) {
+                Log.e("adicionarCustoServicoPorIdTarefa", ex.message.toString())
+                false
+            }
+        }
+    }
+
     suspend fun deletarServicoPorId(servicoId: Int): Boolean {
         return withContext(Dispatchers.IO) {
             try {
@@ -171,35 +195,6 @@ class ServicoRepository {
             } catch (ex: Exception) {
                 Log.e("ServicosCliente", ex.message.toString())
                 listOf()
-            }
-        }
-    }
-
-
-
-
-
-    suspend fun adicionarCustoPorIdTarefa(tarefaId: Long, custoSoma:Double): Boolean {
-        return withContext(Dispatchers.IO) {
-            try {
-                val response = repository.adicionarCustoPorIdTarefa(
-                    tarefaId, servicoRequest = ServicoRequest(
-                        idUsuario = null,
-                        titulo = null,
-                        descricao = null,
-                        valorServico = null,
-                        custoAtual = null,
-                        custoSoma = custoSoma,
-                        dataInicio = null,
-                        enderecoServico = null,
-                        cliente = null
-                    )
-                )
-                response.body()
-                true
-            } catch (ex: Exception) {
-                Log.e("adicionarCustoServicoPorIdTarefa", ex.message.toString())
-                false
             }
         }
     }

@@ -33,6 +33,13 @@ class ServicoUseCase {
         )
     }
 
+    suspend fun adicionarCustoPorIdTarefa(servicoId: Int, custoSoma:Double): Boolean {
+        return repository.adicionarCustoPorIdTarefa(
+            servicoId,
+            custoSoma = custoSoma
+        )
+    }
+
     suspend fun deletarServicoPorId(servicoId: Int): Boolean {
         return repository.deletarServicoPorId(servicoId)
     }
@@ -66,17 +73,4 @@ class ServicoUseCase {
         return repository.buscarTarefasPorIdCliente(clienteId)
     }
 
-
-
-
-
-    suspend fun adicionarCustoPorIdTarefa(
-        tarefaId: Long,
-        custoSoma:Double
-    ): Boolean {
-        return repository.adicionarCustoPorIdTarefa(
-            tarefaId,
-            custoSoma = custoSoma
-        )
-    }
 }

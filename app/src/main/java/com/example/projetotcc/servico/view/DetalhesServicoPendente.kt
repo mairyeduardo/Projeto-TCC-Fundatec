@@ -7,6 +7,7 @@ import android.os.Looper
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.postDelayed
 import com.bumptech.glide.Glide
 import com.example.projetotcc.R
 import com.example.projetotcc.cliente.view.ClienteActivity
@@ -97,9 +98,7 @@ class DetalhesServicoPendente : AppCompatActivity() {
             }
         }
 
-
-
-
+        configurarBotaoAdicionarCusto()
         configurarBotaoRelatorio()
         configurarBotaoCliente()
         configurarBotaoHome()
@@ -127,6 +126,18 @@ class DetalhesServicoPendente : AppCompatActivity() {
         }, DELAY_TELA)
     }
 
+    private fun chamarTelaAdicionarCusto() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@DetalhesServicoPendente, AdicionarCustoActivity::class.java)
+            startActivity(intent)
+        }, DELAY_TELA)
+    }
+
+    private fun configurarBotaoAdicionarCusto() {
+        binding.buttonAdicionarCusto.setOnClickListener {
+            chamarTelaAdicionarCusto()
+        }
+    }
 
     private fun configurarBotaoRelatorio() {
         binding.ivRelatorio.setOnClickListener {

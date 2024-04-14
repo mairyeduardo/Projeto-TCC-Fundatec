@@ -22,33 +22,38 @@ class ServicoRepository {
     }
 
     suspend fun criarServico(
-        idUsuario: Long,
         titulo: String,
         descricao: String?,
         valorServico: Double,
         custoAtual: Double?,
-        custoSoma: Double?,
-        dataInicio: LocalDate,
+        dataInicio: String,
         enderecoServico: String,
-        cliente: Cliente
+        nome: String,
+        telefone: String,
+        enderecoCliente: String,
     ): Boolean {
         return withContext(Dispatchers.IO) {
             try {
+                val cliente = Cliente(
+                    nome = nome,
+                    telefone = telefone,
+                    enderecoPrincipal = enderecoCliente
+                )
+
                 val response = repository.criarServico(
                     servicoRequest = ServicoRequest(
-                        idUsuario = idUsuario,
+                        idUsuario = loginRepository.pegarId(),
                         titulo = titulo,
                         descricao = descricao,
                         valorServico = valorServico,
                         custoAtual = custoAtual,
-                        custoSoma = custoSoma,
+                        custoSoma = null,
                         dataInicio = dataInicio,
                         enderecoServico = enderecoServico,
                         cliente = cliente
                     )
                 )
-                response.body()
-                true
+                response.isSuccessful
             } catch (ex: Exception) {
                 Log.e("criarServico", ex.message.toString())
                 false

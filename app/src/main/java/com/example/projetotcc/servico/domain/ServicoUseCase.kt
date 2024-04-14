@@ -1,9 +1,7 @@
 package com.example.projetotcc.servico.domain
 
-import com.example.projetotcc.servico.data.Cliente
 import com.example.projetotcc.servico.data.remote.ServicoResponse
 import com.example.projetotcc.servico.data.repository.ServicoRepository
-import java.time.LocalDate
 
 class ServicoUseCase {
 
@@ -12,26 +10,26 @@ class ServicoUseCase {
     }
 
     suspend fun criarServico(
-        idUsuario: Long,
         titulo: String,
         descricao: String?,
         valorServico: Double,
         custoAtual: Double?,
-        custoSoma: Double?,
-        dataInicio: LocalDate,
+        dataInicio: String,
         enderecoServico: String,
-        cliente: Cliente
+        nome: String,
+        telefone: String,
+        enderecoCliente: String,
     ): Boolean {
         return repository.criarServico(
-            idUsuario = idUsuario,
             titulo = titulo,
             descricao = descricao,
             valorServico = valorServico,
             custoAtual = custoAtual,
-            custoSoma = custoSoma,
             dataInicio = dataInicio,
             enderecoServico = enderecoServico,
-            cliente = cliente
+            nome = nome,
+            telefone = telefone,
+            enderecoCliente = enderecoCliente
         )
     }
 

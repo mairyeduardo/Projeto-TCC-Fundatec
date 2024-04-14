@@ -7,6 +7,8 @@ import android.os.Looper
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projetotcc.R
+import com.example.projetotcc.cliente.presentation.ClienteBuscaViewModel
+import com.example.projetotcc.cliente.presentation.model.ClienteBuscaViewState
 import com.example.projetotcc.cliente.view.ClienteActivity
 import com.example.projetotcc.databinding.ActivityNovoServicoBinding
 import com.example.projetotcc.home.view.HomeActivity
@@ -22,6 +24,7 @@ class NovoServicoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNovoServicoBinding
     private val novoServicoViewModel: NovoServicoViewModel by viewModels()
+    private val buscaViewModel: ClienteBuscaViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +32,31 @@ class NovoServicoActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         setContentView(binding.root)
 
+        binding.ftButtonPesquisa.setOnClickListener{
+            buscaViewModel.buscarClientePorNome(binding.pesquisa.text.toString())
+            buscaViewModel.state.observe(this) {
+                when(it) {
+                    is ClienteBuscaViewState.Success -> {
+                        binding.nome.setText(it.cliente.nome)
+                        binding.telefone.setText(it.cliente.telefone)
+                        binding.endereco.setText(it.cliente.enderecoPrincipal)
+                    }
+
+                    is ClienteBuscaViewState.NotFound ->
+                        it.errorMessage
+                }
+            }
+        }
+
         configurarBotaoCriarServico()
         configurarBotaoRelatorio()
         configurarBotaoHome()
         configurarBotaoCliente()
+    }
+
+
+    private fun configurarBotaoBusca() {
+
     }
 
     private fun configurarBotaoCriarServico() {

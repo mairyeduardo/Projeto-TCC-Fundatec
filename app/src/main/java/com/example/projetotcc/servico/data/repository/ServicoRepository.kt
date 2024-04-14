@@ -75,6 +75,21 @@ class ServicoRepository {
         }
     }
 
+    suspend fun finalizarTarefaPorId(servicoId: Int): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.finalizarTarefaPorId(
+                    servicoId
+                )
+                response.isSuccessful
+                true
+            } catch (ex: Exception) {
+                Log.e("finalizarServicoPorId", ex.message.toString())
+                false
+            }
+        }
+    }
+
     suspend fun buscarTarefaPorIdUsuario(): List<ServicoResponse> {
         return withContext(Dispatchers.IO) {
             try {
@@ -162,20 +177,7 @@ class ServicoRepository {
 
 
 
-    suspend fun finalizarTarefaPorId(tarefaId: Long): Boolean {
-        return withContext(Dispatchers.IO) {
-            try {
-                val response = repository.finalizarTarefaPorId(
-                    tarefaId
-                )
-                response.body()
-                true
-            } catch (ex: Exception) {
-                Log.e("finalizarServicoPorId", ex.message.toString())
-                false
-            }
-        }
-    }
+
 
     suspend fun adicionarCustoPorIdTarefa(tarefaId: Long, custoSoma:Double): Boolean {
         return withContext(Dispatchers.IO) {

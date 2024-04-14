@@ -33,6 +33,11 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".servico.view.AdicionarCustoActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
             android:name=".servico.view.DetalhesServicoPendente"
             android:exported="true"
             android:screenOrientation="portrait"></activity>

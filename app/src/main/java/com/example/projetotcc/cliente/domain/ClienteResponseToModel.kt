@@ -13,3 +13,13 @@ fun List<ClienteResponse>.toModel(): List<ClienteModel> {
         )
     }
 }
+
+fun ClienteResponse.toModelNoList(): ClienteModel {
+    return ClienteModel(
+        id = this.id,
+        idUsuario = this.idUsuario,
+        nome = this.nome,
+        telefone = this.telefone,
+        enderecoPrincipal = this.enderecoPrincipal,
+    )
+}

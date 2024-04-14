@@ -38,6 +38,9 @@
     <string name="app_detalhesServico_BotaoFinalizar_sucesso">Sucesso ao finalizar tarefa</string>
     <string name="app_detalhesServico_BotaoFinalizar_error"> Erro ao finalizar servico, tente novamente</string>
 
+    <string name="app_adicionarCusto_Adicionar_sucesso">Sucesso ao adicionar custo</string>
+    <string name="app_adicionarCusto_Adicionar_error">Erro ao adicionar custo</string>
+
     <string name="app_mensagem_sucessoCriacao">Conta criada com sucesso!</string>
     <string name="app_mensagem_erroNomeOnboarding">Erro ao cadastrar, insira um nome válido</string>
     <string name="app_mensagem_erroEmailOnboarding">Erro ao cadastrar, insira um email válido</string>

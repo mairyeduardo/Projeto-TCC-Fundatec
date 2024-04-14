@@ -7,4 +7,6 @@ sealed class ServicoPendenteViewState {
     object ShowExcluirError: ServicoPendenteViewState()
 
     object ShowFinalizarError: ServicoPendenteViewState()
+
+    object ShowAdicionarError: ServicoPendenteViewState()
 }

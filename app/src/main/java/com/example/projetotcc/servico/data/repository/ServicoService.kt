@@ -31,7 +31,7 @@ interface ServicoService {
 
     @PATCH("api/v1/servico/custo/{idTarefa}")
     suspend fun adicionarCustoPorIdTarefa(
-        @Path("idTarefa") idTarefa: Long,
+        @Path("idTarefa") idTarefa: Int,
         @Body servicoRequest: ServicoRequest
     ): Response<ServicoResponse>
 

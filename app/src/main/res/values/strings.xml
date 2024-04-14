@@ -23,6 +23,16 @@
     <string name="app_botao_entrar">Entrar</string>
     <string name="app_botao_servico">Novo Serviço</string>
 
+    <string name="app_novoServico_titulo_error">Erro ao cadastrar, insira um titulo valido</string>
+    <string name="app_novoServico_descricao_error">Erro ao cadastrar, insira uma descrição valida</string>
+    <string name="app_novoServico_valorServico_error">Erro ao cadastrar, insira um valor de serviço</string>
+    <string name="app_novoServico_custoAtual_error">Erro ao cadastrar, insira um custo inicial valido</string>
+    <string name="app_novoServico_enderecoServico_error">Erro ao cadastrar, insira um endereco valido</string>
+    <string name="app_novoServico_dataInicio_error">Erro ao cadastrar, insira uma data de inicio valida</string>
+    <string name="app_novoServico_nomeCliente_error">Erro ao cadastrar, insira um nome de cliente valido</string>
+    <string name="app_novoServico_telefoneCliente_error">Erro ao cadastrar, insira um telefone de cliente valido</string>
+    <string name="app_novoServico_enderecoCliente_error">Erro ao cadastrar, insira um endereco de cliente valido</string>
+
     <string name="app_mensagem_sucessoCriacao">Conta criada com sucesso!</string>
     <string name="app_mensagem_erroNomeOnboarding">Erro ao cadastrar, insira um nome válido</string>
     <string name="app_mensagem_erroEmailOnboarding">Erro ao cadastrar, insira um email válido</string>

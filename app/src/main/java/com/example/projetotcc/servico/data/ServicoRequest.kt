@@ -5,13 +5,13 @@ import java.time.LocalDate
 
 @JsonClass(generateAdapter = true)
 class ServicoRequest (
-    val idUsuario: Long?,
+    val idUsuario: Int?,
     val titulo: String?,
     val descricao: String?,
     val valorServico: Double?,
     val custoAtual: Double?,
     val custoSoma: Double?,
-    val dataInicio: LocalDate?,
+    val dataInicio: String?,
     val enderecoServico: String?,
-    cliente: Cliente?
+    val cliente: Cliente?
 )

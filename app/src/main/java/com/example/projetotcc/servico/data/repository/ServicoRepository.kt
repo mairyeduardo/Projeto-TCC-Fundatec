@@ -22,33 +22,38 @@ class ServicoRepository {
     }
 
     suspend fun criarServico(
-        idUsuario: Long,
         titulo: String,
-        descricao: String?,
+        descricao: String,
         valorServico: Double,
-        custoAtual: Double?,
-        custoSoma: Double?,
-        dataInicio: LocalDate,
+        custoAtual: Double,
+        dataInicio: String,
         enderecoServico: String,
-        cliente: Cliente
+        nome: String,
+        telefone: String,
+        enderecoCliente: String,
     ): Boolean {
         return withContext(Dispatchers.IO) {
             try {
+                val cliente = Cliente(
+                    nome = nome,
+                    telefone = telefone,
+                    enderecoPrincipal = enderecoCliente
+                )
+
                 val response = repository.criarServico(
                     servicoRequest = ServicoRequest(
-                        idUsuario = idUsuario,
+                        idUsuario = loginRepository.pegarId(),
                         titulo = titulo,
                         descricao = descricao,
                         valorServico = valorServico,
                         custoAtual = custoAtual,
-                        custoSoma = custoSoma,
+                        custoSoma = null,
                         dataInicio = dataInicio,
                         enderecoServico = enderecoServico,
                         cliente = cliente
                     )
                 )
-                response.body()
-                true
+                response.isSuccessful
             } catch (ex: Exception) {
                 Log.e("criarServico", ex.message.toString())
                 false
@@ -84,6 +89,20 @@ class ServicoRepository {
         }
     }
 
+    suspend fun buscarTarefasPendentesPorIdCliente(idCliente: Int): List<ServicoResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.buscarTarefasPendentesPorIdCliente(
+                    idCliente = idCliente
+                )
+                response.body()?: listOf()
+            } catch (ex: Exception) {
+                Log.e("ListaDeServicosPendentesDoCliente", ex.message.toString())
+                listOf()
+            }
+        }
+    }
+
     suspend fun buscarTarefasConcluidasPorIdUsuario(): List<ServicoResponse> {
         return withContext(Dispatchers.IO) {
             try {
@@ -93,6 +112,20 @@ class ServicoRepository {
                 response.body()?: listOf()
             } catch (ex: Exception){
                 Log.e("ListaDeServicosConcluidos", ex.message.toString())
+                listOf()
+            }
+        }
+    }
+
+    suspend fun buscarTarefasConcluidasPorIdCliente(idCliente: Int): List<ServicoResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.buscarTarefasConcluidasPorIdCliente(
+                    idCliente = idCliente
+                )
+                response.body()?: listOf()
+            } catch (ex: Exception) {
+                Log.e("ListaDeServicosConcluidosDoCliente", ex.message.toString())
                 listOf()
             }
         }

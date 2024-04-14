@@ -1,9 +1,7 @@
 package com.example.projetotcc.servico.domain
 
-import com.example.projetotcc.servico.data.Cliente
 import com.example.projetotcc.servico.data.remote.ServicoResponse
 import com.example.projetotcc.servico.data.repository.ServicoRepository
-import java.time.LocalDate
 
 class ServicoUseCase {
 
@@ -12,26 +10,26 @@ class ServicoUseCase {
     }
 
     suspend fun criarServico(
-        idUsuario: Long,
         titulo: String,
-        descricao: String?,
+        descricao: String,
         valorServico: Double,
-        custoAtual: Double?,
-        custoSoma: Double?,
-        dataInicio: LocalDate,
+        custoAtual: Double,
+        dataInicio: String,
         enderecoServico: String,
-        cliente: Cliente
+        nome: String,
+        telefone: String,
+        enderecoCliente: String,
     ): Boolean {
         return repository.criarServico(
-            idUsuario = idUsuario,
             titulo = titulo,
             descricao = descricao,
             valorServico = valorServico,
             custoAtual = custoAtual,
-            custoSoma = custoSoma,
             dataInicio = dataInicio,
             enderecoServico = enderecoServico,
-            cliente = cliente
+            nome = nome,
+            telefone = telefone,
+            enderecoCliente = enderecoCliente
         )
     }
 
@@ -43,9 +41,18 @@ class ServicoUseCase {
         return repository.buscarTarefasPendentesPorIdUsuario()
     }
 
+    suspend fun buscarTarefasPendentesPorIdCliente(idCliente: Int): List<ServicoResponse> {
+        return repository.buscarTarefasPendentesPorIdCliente(idCliente)
+    }
+
     suspend fun buscarTarefasConcluidasPorIdUsuario(): List<ServicoResponse> {
         return repository.buscarTarefasConcluidasPorIdUsuario()
     }
+
+    suspend fun buscarTarefasConcluidasPorIdCliente(idCliente: Int): List<ServicoResponse> {
+        return repository.buscarTarefasConcluidasPorIdCliente(idCliente)
+    }
+
 
     suspend fun buscarTarefasPorIdCliente(clienteId: Long): List<ServicoResponse> {
         return repository.buscarTarefasPorIdCliente(clienteId)

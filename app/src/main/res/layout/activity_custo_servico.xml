@@ -89,8 +89,8 @@
             <EditText
                 android:id="@+id/custo"
                 android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:inputType="text"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 

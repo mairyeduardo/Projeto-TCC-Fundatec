@@ -33,6 +33,10 @@ class ServicoUseCase {
         )
     }
 
+    suspend fun deletarServicoPorId(servicoId: Int): Boolean {
+        return repository.deletarServicoPorId(servicoId)
+    }
+
     suspend fun buscarTarefaPorIdUsuario(): List<ServicoResponse> {
         return repository.buscarTarefaPorIdUsuario()
     }
@@ -58,9 +62,7 @@ class ServicoUseCase {
         return repository.buscarTarefasPorIdCliente(clienteId)
     }
 
-    suspend fun deletarServicoPorId(servicoId: Long): Boolean {
-        return repository.deletarServicoPorId(servicoId)
-    }
+
 
     suspend fun finalizarTarefaPorId(tarefaId: Long): Boolean {
         return repository.finalizarTarefaPorId(tarefaId)

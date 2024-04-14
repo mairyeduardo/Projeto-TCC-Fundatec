@@ -21,7 +21,7 @@ interface ServicoService {
 
     @DELETE("api/v1/servico/{idTarefa}")
     suspend fun deletarServicoPorId(
-        @Path("idTarefa") idTarefa: Long,
+        @Path("idTarefa") idTarefa: Int,
     ): Response<ServicoResponse>
 
     @PUT("api/v1/servico/finalizar/{idTarefa}")

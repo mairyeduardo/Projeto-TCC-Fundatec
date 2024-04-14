@@ -61,6 +61,20 @@ class ServicoRepository {
         }
     }
 
+    suspend fun deletarServicoPorId(servicoId: Int): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = repository.deletarServicoPorId(
+                    servicoId
+                )
+                response.isSuccessful
+            } catch (ex: Exception) {
+                Log.e("deletarServicoPorId", ex.message.toString())
+                false
+            }
+        }
+    }
+
     suspend fun buscarTarefaPorIdUsuario(): List<ServicoResponse> {
         return withContext(Dispatchers.IO) {
             try {
@@ -146,20 +160,7 @@ class ServicoRepository {
         }
     }
 
-    suspend fun deletarServicoPorId(servicoId: Long): Boolean {
-        return withContext(Dispatchers.IO) {
-            try {
-                val response = repository.deletarServicoPorId(
-                    servicoId
-                )
-                response.body()
-                true
-            } catch (ex: Exception) {
-                Log.e("deletarServicoPorId", ex.message.toString())
-                false
-            }
-        }
-    }
+
 
     suspend fun finalizarTarefaPorId(tarefaId: Long): Boolean {
         return withContext(Dispatchers.IO) {

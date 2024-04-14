@@ -252,6 +252,7 @@
                 <EditText
                     android:id="@+id/inicio"
                     android:layout_width="match_parent"
+                    android:hint="aaaa-mm-dd"
                     android:layout_height="50sp"
                     android:inputType="date"
                     />

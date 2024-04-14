@@ -41,7 +41,7 @@
     <string name="app_adicionarCusto_Adicionar_sucesso">Sucesso ao adicionar custo</string>
     <string name="app_adicionarCusto_Adicionar_error">Erro ao adicionar custo</string>
 
-    <string name="app_relatorioDetails_busca_error">Não foi possivel encontrar relatorio para esta tarefa</string>
+    <string name="app_relatorioDetails_busca_error">Aguarde um momento</string>
 
     <string name="app_mensagem_sucessoCriacao">Conta criada com sucesso!</string>
     <string name="app_mensagem_erroNomeOnboarding">Erro ao cadastrar, insira um nome válido</string>

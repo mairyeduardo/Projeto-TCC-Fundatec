@@ -33,6 +33,9 @@
     <string name="app_novoServico_telefoneCliente_error">Erro ao cadastrar, insira um telefone de cliente valido</string>
     <string name="app_novoServico_enderecoCliente_error">Erro ao cadastrar, insira um endereco de cliente valido</string>
 
+    <string name="app_detalhesServico_BotaoExcluir_error">Erro ao excluir, tente novamente</string>
+    <string name="app_detalhesServico_BotaoExcluir_sucesso">Sucesso ao excluir tarefa</string>
+
     <string name="app_mensagem_sucessoCriacao">Conta criada com sucesso!</string>
     <string name="app_mensagem_erroNomeOnboarding">Erro ao cadastrar, insira um nome válido</string>
     <string name="app_mensagem_erroEmailOnboarding">Erro ao cadastrar, insira um email válido</string>

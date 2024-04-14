@@ -5,19 +5,25 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.projetotcc.R
 import com.example.projetotcc.cliente.view.ClienteActivity
 import com.example.projetotcc.databinding.ActivityDetalhesServicoPendenteBinding
 import com.example.projetotcc.home.domain.ServicoModel
 import com.example.projetotcc.home.view.HomeActivity
 import com.example.projetotcc.relatorio.view.RelatorioActivity
+import com.example.projetotcc.servico.presentation.DetalhesServicoPendenteViewModel
+import com.example.projetotcc.servico.presentation.model.ServicoPendenteViewState
+import com.example.projetotcc.showSnackBar
 
 private const val DELAY_TELA = 1000L
 
 class DetalhesServicoPendente : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetalhesServicoPendenteBinding
+    private val detalhesServicosViewModel: DetalhesServicoPendenteViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +44,33 @@ class DetalhesServicoPendente : AppCompatActivity() {
         binding.textData.text = servico.dataInicio
         binding.textNomeCliente.text = servico.nomeCliente
         Log.e("teste", servico.toString())
+
+        binding.buttonExcluir.setOnClickListener {
+            detalhesServicosViewModel.deletarTarefa(servico.id)
+            detalhesServicosViewModel.state.observe(this) {
+                when(it) {
+
+                    is ServicoPendenteViewState.ShowHomeScreen -> {
+                        chamarTelaHome()
+                        showSnackBar(
+                            binding.root,
+                            R.string.app_detalhesServico_BotaoExcluir_sucesso,
+                            R.color.MensagemVerdeSucesso
+                        )
+                    }
+
+                    is ServicoPendenteViewState.ShowExcluirError -> showSnackBar(
+                        binding.root,
+                        R.string.app_detalhesServico_BotaoExcluir_error,
+                        R.color.MensagemVermelhoError
+                    )
+
+                }
+            }
+
+        }
+
+
 
         configurarBotaoRelatorio()
         configurarBotaoCliente()

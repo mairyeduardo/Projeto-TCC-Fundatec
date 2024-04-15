@@ -249,12 +249,15 @@
                 app:layout_constraintStart_toStartOf="@+id/texto_data_inicio"
                 app:layout_constraintEnd_toEndOf="@+id/texto_data_inicio"
                 >
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:id="@+id/inicio"
                     android:layout_width="match_parent"
                     android:hint="aaaa-mm-dd"
                     android:layout_height="50sp"
                     android:inputType="date"
+                    app:mask="____-__-__"
+                    app:maskCharacter="_"
+                    app:maskStyle="completable"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 

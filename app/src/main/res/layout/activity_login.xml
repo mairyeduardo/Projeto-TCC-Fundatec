@@ -67,7 +67,7 @@
         <EditText
             android:id="@+id/login_email"
             android:layout_width="280dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:hint="@string/app_campo_email"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
@@ -99,7 +99,7 @@
         <EditText
             android:id="@+id/login_senha"
             android:layout_width="280dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:textSize="20sp"
             android:inputType="textPassword"
             android:hint="@string/app_campo_senha"

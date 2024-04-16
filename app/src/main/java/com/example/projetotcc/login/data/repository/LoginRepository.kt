@@ -8,6 +8,7 @@ import com.example.projetotcc.login.data.remote.LoginResponse
 import com.example.projetotcc.network.RetrofitNetworkClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.util.Date
 
 class LoginRepository {
     private val repository = RetrofitNetworkClient.createNetworkClient(
@@ -59,8 +60,15 @@ class LoginRepository {
             id = id,
             nome = nome,
             email = email,
-            senha = senha
+            senha = senha,
+            date = Date()
         )
+    }
+
+    suspend fun getDateCache(): Date? {
+        return withContext(Dispatchers.IO) {
+            database.userDao().getUserDate()
+        }
     }
 
     suspend fun clearDateCache() {

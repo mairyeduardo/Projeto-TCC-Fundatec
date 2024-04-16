@@ -277,7 +277,7 @@
                 android:id="@+id/texto_contato_salvo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contato salvo?"
+                android:text="Cliente salvo?"
                 android:textColor="@color/black"
                 android:textSize="11sp"
                 app:layout_constraintEnd_toStartOf="@+id/input_pesquisa_contato"
@@ -299,6 +299,7 @@
                 <EditText
                     android:id="@+id/pesquisa"
                     android:layout_width="match_parent"
+                    android:hint="Nome cliente"
                     android:layout_height="50sp"
                     android:inputType="text"
                     />

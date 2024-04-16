@@ -14,14 +14,13 @@ Facilitando a organização de seus serviços e clientes, lucros e despesas.
 - Login
 - Cadastro de serviços
 - Consulta dos serviços cadastrados
-- Deletar serviços
-- Finalizar serviços
-- Adicinar custos no serviço
+- Deletar serviços em andamento
+- Finalizar serviços em andamento
+- Adicinar custos no serviço em andamento
 - Cadastro de clientes
 - Consulta de clientes
 - Gerar relatórios
 - Consultar relatórios
-- Excluir relatórios
 
 ---
 
@@ -39,7 +38,14 @@ plugins {
 
 Atualmente o projeto é executado em local host, ou pode ser gerado uma apk para testar.
 
+#### como gerar apk:
+No android studio vá até Build -> Build Bundle(s) / APK(s) -> Build APK(s)
+
 ### Rodando o projeto em LocalHost:
+
+#### Observações:
+Este projeto é altamente dependente do funcionamento da api: http://44.198.225.29:8080/solocraft/
+Se a mesma não estiver funcionando ou estiver fora do ar, suba localmente e altere as configurações de conexão, link do projeto: https://github.com/mairyeduardo/Projeto-TCC-Fundatec-BackEnd 
 
 #### Necessario:
 

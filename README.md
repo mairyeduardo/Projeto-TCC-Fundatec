@@ -1,6 +1,8 @@
 # Projeto-TCC-Fundatec
 Front End do projeto "Solo Craft" desenvolvido para o TCCII;
 
+Figma do projeto: https://www.figma.com/design/iIC3fDgntHLQlhJujZ8dbk/MVP---Solo-Craft
+
 ## Para que serve?
 
 Está aplicação é um gerenciador de serviços, para trabalhadores autonomos que realizam serviços fora de casa.
